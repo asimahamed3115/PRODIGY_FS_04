@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap');
+
+:root {
+  --bg-primary: #f2f2f2;
+  --bg-secondary: #fff;
+  --color-sender: #a445b2;
+  --color-receiver: #4da6c8;
+  --text-color: #333;
+  --font: 'Poppins', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font);
+}
+
+body {
+  background: var(--bg-primary);
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: 20px auto;
+  background: var(--bg-secondary);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.chat-header {
+  padding: 15px 20px;
+  background: linear-gradient(90deg, var(--color-sender), var(--color-receiver));
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.status.online { color: #c8ffca; }
+.status.offline { color: #ffb3b3; }
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: var(--bg-primary);
+}
+
+.message {
+  max-width: 75%;
+  margin-bottom: 15px;
+  padding: 12px 18px;
+  border-radius: 20px;
+  position: relative;
+  color: var(--text-color);
+  animation: fadeIn 0.4s ease;
+}
+
+.message.sent {
+  background: var(--color-sender);
+  color: #fff;
+  align-self: flex-end;
+}
+
+.message.received {
+  background: var(--color-receiver);
+  color: #fff;
+  align-self: flex-start;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 10px 20px;
+  background: var(--bg-secondary);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  outline: none;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 0 20px;
+  background: linear-gradient(90deg, var(--color-sender), var(--color-receiver));
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.3s;
+}
+.one{
+    background-color: #a445b2;
+    color: #66ccf4;
+    text-align: center;
+}
+
+.chat-input button:hover {
+  filter: brightness(1.1);
+}
+
+#file-input {
+  margin: 5px 20px 20px;
+}
+
+@media (max-width: 480px) {
+  .chat-container {
+    height: 90vh;
+    margin: 10px;
+  }
+
+  .message {
+    max-width: 85%;
+    padding: 10px 14px;
+  }
+}

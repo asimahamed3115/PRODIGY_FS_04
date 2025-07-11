@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="one">
+        <h1>REAL TIME CHAT</h1>
+    </div>
+  <div class="chat-container">
+    <div class="chat-header">
+      <h1>REAL TIME CHAT</h1>
+      <div id="status-indicator" class="status">🔴 Offline</div>
+    </div>
+
+    <div class="chat-box" id="chat-box"></div>
+
+    <div class="chat-input">
+      <input type="text" id="message-input" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <input type="file" id="file-input" />
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
